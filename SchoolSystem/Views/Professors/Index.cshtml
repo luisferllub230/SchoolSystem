@@ -1,60 +1,71 @@
 ﻿@model IEnumerable<SchoolSystem.Models.Professor>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Professors Administration";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>Index</h1>
+<div class="card mt-3 border-dark">
+    <div class="card-header bg-dark bg-gradient">
+        <h4 class="text-center text-white">
+            @ViewBag.Title
+        </h4>
+    </div>
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.ProfessorName)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ProfessorLastN)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ProfessorClass)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ProfessorAge)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ProfessorPhone)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.ProfessorName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ProfessorLastN)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ProfessorClass)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ProfessorAge)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ProfessorPhone)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
-            </td>
-        </tr>
-}
-    </tbody>
-</table>
+    <p>
+    <a asp-action="Create" class="btn btn-success mt-2 ms-2">Create New</a>
+    </p>
+
+    <div class="table-responsive">
+          <table class="table">
+            <thead>
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.ProfessorName)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.ProfessorLastN)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.ProfessorClass)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.ProfessorAge)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.ProfessorPhone)
+                    </th> 
+                    <th >
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+        @foreach (var item in Model) {
+                <tr >
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ProfessorName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ProfessorLastN)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ProfessorClass)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ProfessorAge)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ProfessorPhone)
+                    </td>
+                    <td>
+                        <a class="btn btn-warning p-0 ps-2 pe-2 text-white" asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                        <a class="btn btn-primary p-0 ps-2 pe-2 text-white" asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                        <a class="btn btn-danger p-0 ps-2 pe-2 text-white" asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                    </td>
+                </tr>
+        }
+            </tbody>
+        </table>
+    </div>
+   
+</div>

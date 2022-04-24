@@ -1,8 +1,46 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Home Page";    
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+
+<div class="row row-cols-1 row-cols-md-3 g-4">
+
+ <div class="col">
+    <div class="card h-100 border-secondary">
+      <img src="https://ed.stanford.edu/sites/default/files/news_images/absent.jpg" class="card-img-top" alt="Classes">
+      <div class="card-body border-secondary">
+        <h5 class="card-title">Classes</h5>
+        <p class="card-text"><h1>100</h1></p>
+      </div>
+      <div class="card-footer">
+         <a class="btn btn-primary text-withe " asp-area="" asp-controller="Classes" asp-action="Index">Classes</a>
+      </div>
+    </div>
+  </div>
+
+ <div class="col">
+    <div class="card h-100 border-secondary">
+      <img src="https://wp-media.petersons.com/blog/wp-content/uploads/2019/03/10123432/iStock-946556568.jpg" class="card-img-top" alt="professors">
+      <div class="card-body border-secondary">
+        <h5 class="card-title">Professor</h5>
+        <p class="card-text"><h1>100</h1></p>
+      </div>
+      <div class="card-footer">
+         <a class="btn btn-primary text-withe " asp-area="" asp-controller="Professors" asp-action="Index">Professors</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="col">
+    <div class="card h-100 border-secondary">
+      <img src="https://s30383.pcdn.co/wp-content/uploads/2020/12/topic-faculty-active-engaged-students-1.png" class="card-img-top" alt="Student">
+      <div class="card-body border-secondary">
+        <h5 class="card-title">Student</h5>
+        <p class="card-text"><h1>100</h1></p>
+      </div>
+      <div class="card-footer">
+        <a class="btn btn-primary text-withe " asp-area="" asp-controller="Students" asp-action="Index">Students</a>
+      </div>
+    </div>
+  </div>
 </div>
